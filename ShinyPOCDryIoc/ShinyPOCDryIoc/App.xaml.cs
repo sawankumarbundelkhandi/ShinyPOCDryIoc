@@ -23,6 +23,7 @@ namespace ShinyPOCDryIoc
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LocationPage, LocationPageViewModel>();
         }
     }
 }

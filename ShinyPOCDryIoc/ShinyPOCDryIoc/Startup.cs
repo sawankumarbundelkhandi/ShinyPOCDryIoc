@@ -11,6 +11,7 @@ namespace ShinyPOCDryIoc
     {
         public override void ConfigureServices(IServiceCollection services, IPlatform platform)
         {
+            services.UseGps<GpsDelegate>();
         }
 
 
