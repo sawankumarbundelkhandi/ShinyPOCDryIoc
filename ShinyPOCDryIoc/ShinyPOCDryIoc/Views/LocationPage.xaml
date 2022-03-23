@@ -10,7 +10,7 @@
         <CollectionView ItemsSource="{Binding Locations}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding .}"/>
+                    <Label Text="{Binding .}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

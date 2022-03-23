@@ -16,7 +16,7 @@ namespace ShinyPOCDryIoc
 
         public Task OnReading(IGpsReading reading)
         {
-            _eventAggregator.GetEvent<LocationUpdateEvent>().Publish($"{reading.Position.Latitude} / {reading.Position.Longitude} - H: {reading.Heading}");
+            _eventAggregator.GetEvent<LocationUpdateEvent>().Publish($"{reading.Timestamp.ToLocalTime()} - L: {reading.Position.Latitude} / {reading.Position.Longitude} - H: {reading.Heading} - Acc: {reading.PositionAccuracy} - SP: {reading.Speed}");
             return Task.CompletedTask;
         }
     }
