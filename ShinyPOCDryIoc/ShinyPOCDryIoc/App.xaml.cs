@@ -10,11 +10,6 @@ namespace ShinyPOCDryIoc
 {
     public partial class App
     {
-        public App(IPlatformInitializer initializer)
-            : base(initializer)
-        {
-        }
-
         protected override async void OnInitialized()
         {
             InitializeComponent();
