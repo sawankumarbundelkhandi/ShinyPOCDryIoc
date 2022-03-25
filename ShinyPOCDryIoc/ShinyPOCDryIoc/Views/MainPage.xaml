@@ -9,6 +9,7 @@
         VerticalOptions="CenterAndExpand" 
         HorizontalOptions="CenterAndExpand" >
         <Button Text="Location" Command="{xaml:NavigateTo 'LocationPage'}"/>
+        <Button Text="Location" Command="{xaml:NavigateTo 'PushPage'}"/>
     </StackLayout>
 
 </ContentPage>

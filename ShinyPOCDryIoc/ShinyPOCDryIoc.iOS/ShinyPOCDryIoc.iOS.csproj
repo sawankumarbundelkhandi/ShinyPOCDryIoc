@@ -107,6 +107,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
+    <BundleResource Include="GoogleService-Info.plist" />
     <None Include="Info.plist" />
     <LinkDescription Include="LinkerSettings.xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +208,9 @@
       <Version>2.4.3.3024</Version>
     </PackageReference>
     <PackageReference Include="Shiny.Locations">
+      <Version>2.4.3.3024</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.Push.FirebaseMessaging">
       <Version>2.4.3.3024</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.CommunityToolkit">

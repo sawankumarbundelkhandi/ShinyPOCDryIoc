@@ -8,6 +8,7 @@
     <PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
     <PackageReference Include="Shiny" Version="2.4.3.3024" />
     <PackageReference Include="Shiny.Locations" Version="2.4.3.3024" />
+    <PackageReference Include="Shiny.Push.FirebaseMessaging" Version="2.4.3.3024" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
@@ -22,6 +23,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\LocationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PushPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
