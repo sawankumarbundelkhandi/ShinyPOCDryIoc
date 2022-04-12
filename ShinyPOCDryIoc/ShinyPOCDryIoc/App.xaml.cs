@@ -2,6 +2,7 @@ using Prism;
 using Prism.Ioc;
 using ShinyPOCDryIoc.ViewModels;
 using ShinyPOCDryIoc.Views;
+using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
@@ -27,6 +28,16 @@ namespace ShinyPOCDryIoc
             containerRegistry.RegisterForNavigation<LocationPage, LocationPageViewModel>();
             containerRegistry.RegisterForNavigation<PushPage, PushPageViewModel>();
             containerRegistry.RegisterForNavigation<SpeechPage, SpeechPageViewModel>();
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            if (VersionTracking.IsFirstLaunchEver)
+            {
+                SecureStorage.RemoveAll();
+            }
         }
     }
 }

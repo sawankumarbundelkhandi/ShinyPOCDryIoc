@@ -56,10 +56,11 @@ namespace ShinyPOCDryIoc.ViewModels
             {
                 _pushManager.WhenReceived().SubscribeAsync(data =>
                 {
-                    Data = data.Notification.ToString();
+                    Data = data.Notification.Title + data.Notification.Message;
                     return Task.CompletedTask;
                 });
-                if (parameters.ContainsKey("date"))
+
+                if (parameters.ContainsKey("data"))
                 {
                     Data = parameters.GetValue<string>("data");
                 }

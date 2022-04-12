@@ -44,10 +44,12 @@
 	<array>
 		<string>location</string>
 		<string>remote-notification</string>
+		<string>fetch</string>
+		<string>processing</string>
 	</array>
-	<key>NSSpeechRecognitionUsageDescription</key>  
-	<string>We need access for speech recognition.</string>  
-	<key>NSMicrophoneUsageDescription</key>  
-	<string>We need access for speech recognition.</string> 
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We need access for speech recognition.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access for speech recognition.</string>
 </dict>
 </plist>
