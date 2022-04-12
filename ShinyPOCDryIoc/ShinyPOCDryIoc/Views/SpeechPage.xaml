@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ShinyPOCDryIoc.Views.SpeechPage"
+    Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding StartOrStop}" Command="{Binding StartListingCommand}"/> 
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Label Text="{Binding RecognizedText}"/>
+    </ContentPage.Content>
+</ContentPage>

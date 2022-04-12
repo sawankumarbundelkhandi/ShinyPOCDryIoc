@@ -45,5 +45,9 @@
 		<string>location</string>
 		<string>remote-notification</string>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>  
+	<string>We need access for speech recognition.</string>  
+	<key>NSMicrophoneUsageDescription</key>  
+	<string>We need access for speech recognition.</string> 
 </dict>
 </plist>

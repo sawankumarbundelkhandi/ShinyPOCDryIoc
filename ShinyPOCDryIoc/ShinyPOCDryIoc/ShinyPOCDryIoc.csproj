@@ -13,6 +13,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+    <PackageReference Include="Shiny.SpeechRecognition" Version="2.4.3.3024" />
   </ItemGroup>
 
   <ItemGroup>

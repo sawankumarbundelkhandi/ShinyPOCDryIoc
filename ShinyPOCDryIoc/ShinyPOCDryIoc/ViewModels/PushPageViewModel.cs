@@ -52,9 +52,17 @@ namespace ShinyPOCDryIoc.ViewModels
 
             Token = await _secureStorage.GetAsync("token");
 
-            if (parameters.GetNavigationMode() == NavigationMode.New && parameters.ContainsKey("date"))
+            if (parameters.GetNavigationMode() == NavigationMode.New)
             {
-                Data = parameters.GetValue<string>("data");
+                _pushManager.WhenReceived().SubscribeAsync(data =>
+                {
+                    Data = data.Notification.ToString();
+                    return Task.CompletedTask;
+                });
+                if (parameters.ContainsKey("date"))
+                {
+                    Data = parameters.GetValue<string>("data");
+                }
             }
         }
     }

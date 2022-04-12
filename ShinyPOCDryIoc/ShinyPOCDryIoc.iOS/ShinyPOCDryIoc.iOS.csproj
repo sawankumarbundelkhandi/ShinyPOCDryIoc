@@ -219,10 +219,13 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+    <PackageReference Include="Shiny.SpeechRecognition">
+      <Version>2.4.3.3024</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShinyPOCDryIoc\ShinyPOCDryIoc.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{C64D227C-6AFB-47A9-8658-FCEB3F89D796}</Project>
       <Name>ShinyPOCDryIoc</Name>
     </ProjectReference>
   </ItemGroup>
