@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Navigation;
 using Shiny;
@@ -11,6 +12,7 @@ namespace ShinyPOCDryIoc.ViewModels
     {
         private string _token;
         private string _data;
+        private IDisposable _whenReceivedSubscription;
         private readonly ISecureStorage _secureStorage;
         private readonly IPushManager _pushManager;
 
@@ -54,7 +56,7 @@ namespace ShinyPOCDryIoc.ViewModels
 
             if (parameters.GetNavigationMode() == NavigationMode.New)
             {
-                _pushManager.WhenReceived().SubscribeAsync(data =>
+                _whenReceivedSubscription = _pushManager.WhenReceived().SubscribeAsync(data =>
                 {
                     Data = data.Notification.Title + data.Notification.Message;
                     return Task.CompletedTask;
@@ -64,6 +66,16 @@ namespace ShinyPOCDryIoc.ViewModels
                 {
                     Data = parameters.GetValue<string>("data");
                 }
+            }
+        }
+
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            base.OnNavigatedFrom(parameters);
+
+            if(_whenReceivedSubscription != null)
+            {
+                _whenReceivedSubscription.Dispose();
             }
         }
     }
