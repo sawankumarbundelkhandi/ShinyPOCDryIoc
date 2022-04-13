@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Navigation;
 using Shiny;
+using Shiny.Notifications;
 using Shiny.Push;
 using Xamarin.Essentials.Interfaces;
 
@@ -15,19 +16,23 @@ namespace ShinyPOCDryIoc.ViewModels
         private IDisposable _whenReceivedSubscription;
         private readonly ISecureStorage _secureStorage;
         private readonly IPushManager _pushManager;
+        private readonly INotificationManager _notificationManager;
 
-        public PushPageViewModel(ISecureStorage secureStorage, IPushManager pushManager)
+        public PushPageViewModel(ISecureStorage secureStorage, IPushManager pushManager, INotificationManager notificationManager)
         {
             _secureStorage = secureStorage;
             _pushManager = pushManager;
             RegisterCommand = new DelegateCommand(async () => await RegisterCommandHandler());
+            _notificationManager = notificationManager;
         }
 
         private async Task RegisterCommandHandler()
         {
             var result = await _pushManager.RequestAccess();
 
-            if (result.Status == AccessState.Available)
+            var notificationResult = await _notificationManager.RequestAccess();
+
+            if (result.Status == AccessState.Available && notificationResult == AccessState.Available)
             {
                 await _secureStorage.SetAsync("token", result.RegistrationToken);
                 Token = result.RegistrationToken;

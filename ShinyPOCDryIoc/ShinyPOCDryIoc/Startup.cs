@@ -14,6 +14,7 @@ namespace ShinyPOCDryIoc
             services.UseGps<GpsDelegate>();
             services.UseFirebaseMessaging<PushDelegate>();
             services.UseSpeechRecognition();
+            services.UseNotifications<NotificationDelegate>();
         }
 
 
